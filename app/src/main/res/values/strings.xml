@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Notater</string>
+
+    <!-- EditText-->
+    <string name="et_name_hint">Title</string>
+    <string name="et_content_hint">Content</string>
+
+    <!-- Menu-->
+    <string name="menu_search">search</string>
+    <string name="menu_add">add</string>
+    <string name="menu_done">done</string>
+    <string name="menu_edit">edit</string>
+
+    <!-- Toast -->
+    <string name="toast_cancel">Canceled!</string>
+    <string name="toast_empty">Empty!</string>
+    <string name="toast_add">Added</string>
+    <string name="toast_delete">Deleted</string>
+    <string name="toast_update">Updated</string>
+
+    <!-- Dialog -->
+    <string name="dialog_del_title">Delete</string>
+    <string name="dialog_del_text">Are you sure you want to delete?</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+
+</resources>
