@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity(), View.OnLongClickListener, View.OnClick
     private lateinit var linearLayoutManager: LinearLayoutManager
     private var viewModel: MainViewModel? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
