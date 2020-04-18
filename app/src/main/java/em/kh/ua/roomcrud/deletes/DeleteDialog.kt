@@ -1,4 +1,4 @@
-package em.kh.ua.notater.deletes
+package em.kh.ua.roomcrud.deletes
 
 import android.app.Dialog
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import em.kh.ua.notater.R
-import em.kh.ua.notater.database.Note
+import em.kh.ua.roomcrud.R
+import em.kh.ua.roomcrud.database.Note
 
 class DeleteDialog : DialogFragment() {
 

@@ -1,4 +1,4 @@
-package em.kh.ua.notater.database
+package em.kh.ua.roomcrud.database
 
 import android.content.Context
 import androidx.room.Database

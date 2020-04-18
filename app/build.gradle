@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "em.kh.ua.notater"
+        applicationId "em.kh.ua.roomcrud"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1

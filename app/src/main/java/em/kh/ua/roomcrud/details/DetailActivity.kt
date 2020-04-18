@@ -1,4 +1,4 @@
-package em.kh.ua.notater.details
+package em.kh.ua.roomcrud.details
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import em.kh.ua.notater.R
-import em.kh.ua.notater.database.Note
-import em.kh.ua.notater.databinding.ActivityDetailBinding
-import em.kh.ua.notater.updates.UpdateActivity
+import em.kh.ua.roomcrud.R
+import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.databinding.ActivityDetailBinding
+import em.kh.ua.roomcrud.updates.UpdateActivity
 
 class DetailActivity : AppCompatActivity() {
 

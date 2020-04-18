@@ -1,4 +1,4 @@
-package em.kh.ua.notater.main
+package em.kh.ua.roomcrud.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,12 +13,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import em.kh.ua.notater.R
-import em.kh.ua.notater.database.Note
-import em.kh.ua.notater.adds.AddActivity
-import em.kh.ua.notater.databinding.ActivityMainBinding
-import em.kh.ua.notater.deletes.DeleteDialog
-import em.kh.ua.notater.details.DetailActivity
+import em.kh.ua.roomcrud.R
+import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.adds.AddActivity
+import em.kh.ua.roomcrud.databinding.ActivityMainBinding
+import em.kh.ua.roomcrud.deletes.DeleteDialog
+import em.kh.ua.roomcrud.details.DetailActivity
 import java.util.*
 
 

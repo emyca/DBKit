@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="em.kh.ua.notater">
+    package="em.kh.ua.roomcrud">
 
     <application
         android:allowBackup="true"
@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".updates.UpdateActivity"/>
-        <activity android:name=".details.DetailActivity" />
-        <activity android:name=".adds.AddActivity" />
-        <activity android:name=".main.MainActivity">
+        <activity android:name="em.kh.ua.roomcrud.updates.UpdateActivity"/>
+        <activity android:name="em.kh.ua.roomcrud.details.DetailActivity" />
+        <activity android:name="em.kh.ua.roomcrud.adds.AddActivity" />
+        <activity android:name="em.kh.ua.roomcrud.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

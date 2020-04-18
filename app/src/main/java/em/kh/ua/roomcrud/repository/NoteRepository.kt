@@ -1,8 +1,8 @@
-package em.kh.ua.notater.repository
+package em.kh.ua.roomcrud.repository
 
 import androidx.lifecycle.LiveData
-import em.kh.ua.notater.database.Note
-import em.kh.ua.notater.database.NoteDao
+import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.database.NoteDao
 
 
 class NoteRepository (private val noteDao: NoteDao){

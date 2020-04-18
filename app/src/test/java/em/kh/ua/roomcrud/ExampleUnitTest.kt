@@ -1,4 +1,4 @@
-package em.kh.ua.notater
+package em.kh.ua.roomcrud
 
 import org.junit.Test
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Notater</string>
+    <string name="app_name">RoomCRUD</string>
 
     <!-- EditText-->
     <string name="et_name_hint">Title</string>

@@ -1,4 +1,4 @@
-package em.kh.ua.notater.main
+package em.kh.ua.roomcrud.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,9 +6,9 @@ import android.view.View.OnLongClickListener
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import em.kh.ua.notater.main.MainAdapter.MainViewHolder
-import em.kh.ua.notater.database.Note
-import em.kh.ua.notater.databinding.ItemMainBinding
+import em.kh.ua.roomcrud.main.MainAdapter.MainViewHolder
+import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.databinding.ItemMainBinding
 
 
 class MainAdapter(

@@ -1,4 +1,4 @@
-package em.kh.ua.notater.updates
+package em.kh.ua.roomcrud.updates
 
 import android.content.Context
 import android.content.Intent
@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
-import em.kh.ua.notater.R
-import em.kh.ua.notater.database.Note
-import em.kh.ua.notater.databinding.ActivityUpdateBinding
-import em.kh.ua.notater.main.MainActivity
+import em.kh.ua.roomcrud.R
+import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.databinding.ActivityUpdateBinding
+import em.kh.ua.roomcrud.main.MainActivity
 
 class UpdateActivity : AppCompatActivity() {
 

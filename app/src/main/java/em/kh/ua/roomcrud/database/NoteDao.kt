@@ -1,4 +1,4 @@
-package em.kh.ua.notater.database
+package em.kh.ua.roomcrud.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

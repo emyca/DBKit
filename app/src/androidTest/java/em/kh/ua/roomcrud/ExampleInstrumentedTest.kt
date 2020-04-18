@@ -1,4 +1,4 @@
-package em.kh.ua.notater
+package em.kh.ua.roomcrud
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
