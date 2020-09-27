@@ -8,7 +8,6 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -99,13 +98,13 @@ class MainActivity : AppCompatActivity(), View.OnLongClickListener, View.OnClick
 
     private fun provideViewModel() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        viewModel?.readAllNotes()?.observe(this, Observer {
+        viewModel?.readAllNotes()?.observe(this, {
                 notes -> adapter.addListNotes(notes)
         })
     }
 
     private fun provideViewModel(search: String) {
-        viewModel?.readSearch(search)?.observe(this, Observer {
+        viewModel?.readSearch(search)?.observe(this, {
                 notes -> adapter.addListNotes(notes)
         })
     }
