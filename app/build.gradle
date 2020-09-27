@@ -58,7 +58,7 @@ dependencies {
     def lifecycle_version = "2.2.0"
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     // ViewModel KTX
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
