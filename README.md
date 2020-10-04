@@ -1,5 +1,4 @@
 # RoomCRUD
-Android-project. Basic CRUD operations exposed.
 
 Android-project that demonstrates simple CRUD operations in SQLite database. It uses Material Design, Room, ViewModel, LiveData, Coroutines, ViewBinding.
 
