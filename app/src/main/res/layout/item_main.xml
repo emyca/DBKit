@@ -17,17 +17,6 @@
         android:textColor="@color/colorBlack"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/item_timestamp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="start"
-        android:padding="8dp"
-        android:text="@string/tv_date"
-        android:textColor="@color/colorGray"
-        android:textSize="18sp" />
-
 </LinearLayout>
 
 
