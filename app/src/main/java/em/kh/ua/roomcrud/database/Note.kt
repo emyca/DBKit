@@ -11,7 +11,7 @@ import java.util.*
 
 @Parcelize
 @Entity(tableName = "notes")
-data class Note (
+data class Note(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
