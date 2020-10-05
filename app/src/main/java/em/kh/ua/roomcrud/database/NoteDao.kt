@@ -7,7 +7,7 @@ import androidx.room.*
 @Dao
 interface NoteDao {
 
-    @Query("SELECT * FROM notes ORDER BY name ASC")
+    @Query("SELECT * FROM notes ORDER BY id DESC")
     fun readAllNotes(): LiveData<List<Note>>
 
     @Query("SELECT * FROM notes WHERE name LIKE :search")
