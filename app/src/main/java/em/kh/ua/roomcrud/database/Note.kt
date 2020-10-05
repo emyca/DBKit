@@ -23,8 +23,8 @@ data class Note(
     @ColumnInfo(name = "content")
     val noteContent: String? = null,
 
-    @TypeConverters(Converters::class)
     @ColumnInfo(name = "date")
+    @TypeConverters(Converters::class)
     val noteDate: Date? = null
 
 ):Parcelable
