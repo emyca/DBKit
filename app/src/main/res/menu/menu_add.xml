@@ -10,11 +10,4 @@
         android:orderInCategory="100"
         app:showAsAction="ifRoom"/>
 
-    <item
-        android:id="@+id/menu_date"
-        android:title="@string/menu_date"
-        android:icon="@drawable/ic_date"
-        android:orderInCategory="200"
-        app:showAsAction="ifRoom"/>
-
 </menu>
