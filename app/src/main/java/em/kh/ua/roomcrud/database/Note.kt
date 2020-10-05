@@ -4,7 +4,10 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
+import em.kh.ua.roomcrud.utils.Converters
 import kotlinx.android.parcel.Parcelize
+import java.util.*
 
 @Parcelize
 @Entity(tableName = "notes")
@@ -18,6 +21,10 @@ data class Note (
     val noteName: String? = null,
 
     @ColumnInfo(name = "content")
-    val noteContent: String? = null
+    val noteContent: String? = null,
+
+    @TypeConverters(Converters::class)
+    @ColumnInfo(name = "date")
+    val noteDate: Date? = null
 
 ):Parcelable
