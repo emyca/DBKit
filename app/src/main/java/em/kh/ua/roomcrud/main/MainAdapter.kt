@@ -17,6 +17,7 @@ class MainAdapter(
     private val clickListener: View.OnClickListener
 ) : RecyclerView.Adapter<MainViewHolder>() {
 
+//    W/o ViewBinding
 //    override fun onCreateViewHolder(viewGroup: ViewGroup,
 //        position: Int): MainViewHolder {
 //        return MainViewHolder(LayoutInflater.from(viewGroup.context)
@@ -33,6 +34,7 @@ class MainAdapter(
     override fun onBindViewHolder(holder: MainViewHolder,position: Int){
         val note = noteList[position]
         holder.itemNote.text = note.noteName
+        holder.itemDate.text = note.noteDate
         holder.itemView.tag = note
         holder.itemView.setOnLongClickListener(longClickListener)
         holder.itemView.setOnClickListener(clickListener)
@@ -42,13 +44,10 @@ class MainAdapter(
         return noteList.size
     }
 
-//    inner class MainViewHolder(itemView: View) : ViewHolder(itemView) {
-//        var itemNote: TextView = itemView.findViewById(R.id.item_note)
-//    }
-
     inner class MainViewHolder(binding: ItemMainBinding) :
         RecyclerView.ViewHolder(binding.root){
          var itemNote: TextView = binding.itemNote
+         var itemDate: TextView = binding.itemDate
     }
 
     fun addListNotes(listNotes: List<Note>) {

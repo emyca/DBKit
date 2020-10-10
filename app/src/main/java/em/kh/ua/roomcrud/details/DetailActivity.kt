@@ -17,6 +17,7 @@ class DetailActivity : AppCompatActivity() {
     private var itemId: Int? = null
     private var detailName: TextView? = null
     private var detailContent: TextView? = null
+    private var detailDate: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class DetailActivity : AppCompatActivity() {
     private fun initViews(){
         detailName = binding.detailName
         detailContent = binding.detailContent
+        detailDate = binding.detailDate
     }
 
     private fun handleParcel(){
@@ -46,6 +48,7 @@ class DetailActivity : AppCompatActivity() {
             if (note != null) {
                 detailName?.text = note.noteName
                 detailContent?.text = note.noteContent
+                detailDate?.text = note.noteDate
                 itemId = note.noteId
             }
         }

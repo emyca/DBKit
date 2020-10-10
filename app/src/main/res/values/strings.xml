@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">RoomCRUD</string>
 
+    <string name="date_format">0000&#8211;00&#8211;00</string>
+
     <!-- EditText-->
     <string name="et_name_hint">Title</string>
     <string name="et_content_hint">Content</string>
@@ -10,6 +12,7 @@
     <string name="menu_add">add</string>
     <string name="menu_done">done</string>
     <string name="menu_edit">edit</string>
+    <string name="menu_date">date</string>
 
     <!-- Toast -->
     <string name="toast_cancel">Canceled!</string>

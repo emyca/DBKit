@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 import em.kh.ua.roomcrud.R
@@ -13,6 +15,7 @@ import em.kh.ua.roomcrud.database.Note
 import em.kh.ua.roomcrud.databinding.ActivityAddBinding
 
 import em.kh.ua.roomcrud.main.MainActivity
+import em.kh.ua.roomcrud.utils.DatePicker
 
 
 class AddActivity : AppCompatActivity() {
@@ -20,8 +23,10 @@ class AddActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddBinding
     private var etName: TextInputEditText? = null
     private var etContent: TextInputEditText? = null
+    private var tvDate: TextView? = null
     private var strName: String? = null
     private var strContent: String? = null
+    private  var strDate: String? = null
     private lateinit var addViewModel: AddViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +46,7 @@ class AddActivity : AppCompatActivity() {
     private fun initViews() {
         etName = binding.etName
         etContent = binding.etContent
+        tvDate = binding.tvDate
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -54,14 +60,20 @@ class AddActivity : AppCompatActivity() {
                 handleInput()
                 true
             }
+            R.id.menu_date -> {
+                datePickerStart()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
     private fun handleInput() {
-        strName = etName!!.text.toString().trim { it <= ' ' }
-        strContent = etContent!!.text.toString().trim { it <= ' ' }
-        if (strName!!.isEmpty() || strContent!!.isEmpty()) {
+        strName = etName?.text.toString().trim { it <= ' ' }
+        strContent = etContent?.text.toString().trim { it <= ' ' }
+        strDate = tvDate?.text.toString()
+        if (strName.isNullOrEmpty() || strContent.isNullOrEmpty()
+            || strDate.isNullOrEmpty()) {
             Toast.makeText(this, R.string.toast_empty, Toast.LENGTH_SHORT).show()
         } else {
             provideViewModel()
@@ -72,10 +84,14 @@ class AddActivity : AppCompatActivity() {
         }
     }
 
-    private fun provideViewModel() {
-        addViewModel = ViewModelProvider(this).get(AddViewModel::class.java)
-        addViewModel.insertNote(Note(noteName = strName, noteContent = strContent))
+    private fun datePickerStart() {
+        val newFragment: DialogFragment = DatePicker()
+        newFragment.show(supportFragmentManager, "datePicker")
     }
 
-
+    private fun provideViewModel() {
+        addViewModel = ViewModelProvider(this).get(AddViewModel::class.java)
+        addViewModel.insertNote(
+            Note(noteName = strName, noteContent = strContent, noteDate = strDate))
+    }
 }

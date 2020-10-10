@@ -4,6 +4,7 @@ import androidx.room.TypeConverter
 import java.util.*
 
 // based on: https://developer.android.com
+// TODO try to implement
 class Converters {
 
     @TypeConverter

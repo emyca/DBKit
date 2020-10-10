@@ -9,7 +9,7 @@ import em.kh.ua.roomcrud.utils.Converters
 
 
 @Database(entities = [Note::class], version = 1, exportSchema = false)
-@TypeConverters(Converters::class)
+//@TypeConverters(Converters::class)
 abstract class NoteDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
@@ -34,5 +34,4 @@ abstract class NoteDatabase : RoomDatabase() {
             }
         }
     }
-
 }
