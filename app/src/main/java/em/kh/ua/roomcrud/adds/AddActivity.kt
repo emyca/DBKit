@@ -72,13 +72,17 @@ class AddActivity : AppCompatActivity() {
         strName = etName?.text.toString().trim { it <= ' ' }
         strContent = etContent?.text.toString().trim { it <= ' ' }
         strDate = tvDate?.text.toString()
+
+        val resDateFormat = this.resources.getString(R.string.date_format)
+
         if (strName.isNullOrEmpty() || strContent.isNullOrEmpty()
-            || strDate.isNullOrEmpty()) {
+            || strDate.isNullOrEmpty() || strDate == resDateFormat) {
             Toast.makeText(this, R.string.toast_empty, Toast.LENGTH_SHORT).show()
         } else {
             provideViewModel()
             Toast.makeText(this, R.string.toast_add, Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java)
+            startActivity(
+                Intent(this, MainActivity::class.java)
                     .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             )
         }
@@ -92,6 +96,7 @@ class AddActivity : AppCompatActivity() {
     private fun provideViewModel() {
         addViewModel = ViewModelProvider(this).get(AddViewModel::class.java)
         addViewModel.insertNote(
-            Note(noteName = strName, noteContent = strContent, noteDate = strDate))
+            Note(noteName = strName, noteContent = strContent, noteDate = strDate)
+        )
     }
 }
