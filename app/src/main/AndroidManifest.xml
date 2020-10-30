@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="em.kh.ua.roomcrud.updates.UpdateActivity"/>
-        <activity android:name="em.kh.ua.roomcrud.details.DetailActivity" />
-        <activity android:name="em.kh.ua.roomcrud.adds.AddActivity" />
-        <activity android:name="em.kh.ua.roomcrud.main.MainActivity">
+        <activity android:name="em.kh.ua.roomcrud.ui.view.UpdateActivity"/>
+        <activity android:name="em.kh.ua.roomcrud.ui.view.DetailActivity" />
+        <activity android:name="em.kh.ua.roomcrud.ui.view.AddActivity" />
+        <activity android:name="em.kh.ua.roomcrud.ui.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

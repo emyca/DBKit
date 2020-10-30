@@ -1,11 +1,11 @@
-package em.kh.ua.roomcrud.updates
+package em.kh.ua.roomcrud.ui.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import em.kh.ua.roomcrud.database.Note
-import em.kh.ua.roomcrud.database.NoteDatabase
-import em.kh.ua.roomcrud.repository.NoteRepository
+import em.kh.ua.roomcrud.data.model.Note
+import em.kh.ua.roomcrud.data.database.NoteDatabase
+import em.kh.ua.roomcrud.data.repository.NoteRepository
 import kotlinx.coroutines.launch
 
 class UpdateViewModel(application: Application): AndroidViewModel(application) {

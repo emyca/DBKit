@@ -1,4 +1,4 @@
-package em.kh.ua.roomcrud.details
+package em.kh.ua.roomcrud.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,8 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import em.kh.ua.roomcrud.R
-import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.data.model.Note
 import em.kh.ua.roomcrud.databinding.ActivityDetailBinding
-import em.kh.ua.roomcrud.updates.UpdateActivity
 
 class DetailActivity : AppCompatActivity() {
 

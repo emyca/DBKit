@@ -1,4 +1,4 @@
-package em.kh.ua.roomcrud.updates
+package em.kh.ua.roomcrud.ui.view
 
 import android.content.Context
 import android.content.Intent
@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 import em.kh.ua.roomcrud.R
-import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.data.model.Note
 import em.kh.ua.roomcrud.databinding.ActivityUpdateBinding
-import em.kh.ua.roomcrud.main.MainActivity
+import em.kh.ua.roomcrud.ui.viewmodel.UpdateViewModel
 
 class UpdateActivity : AppCompatActivity() {
 

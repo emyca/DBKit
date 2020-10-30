@@ -1,4 +1,4 @@
-package em.kh.ua.roomcrud.adds
+package em.kh.ua.roomcrud.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,10 +11,10 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 import em.kh.ua.roomcrud.R
-import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.ui.viewmodel.AddViewModel
+import em.kh.ua.roomcrud.data.model.Note
 import em.kh.ua.roomcrud.databinding.ActivityAddBinding
 
-import em.kh.ua.roomcrud.main.MainActivity
 import em.kh.ua.roomcrud.utils.DatePicker
 
 

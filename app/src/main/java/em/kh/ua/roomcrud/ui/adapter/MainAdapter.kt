@@ -1,4 +1,4 @@
-package em.kh.ua.roomcrud.main
+package em.kh.ua.roomcrud.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.View.OnLongClickListener
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import em.kh.ua.roomcrud.main.MainAdapter.MainViewHolder
-import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.ui.adapter.MainAdapter.MainViewHolder
+import em.kh.ua.roomcrud.data.model.Note
 import em.kh.ua.roomcrud.databinding.ItemMainBinding
 
 

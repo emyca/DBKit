@@ -1,7 +1,8 @@
-package em.kh.ua.roomcrud.database
+package em.kh.ua.roomcrud.data.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import em.kh.ua.roomcrud.data.model.Note
 
 
 @Dao

@@ -1,4 +1,4 @@
-package em.kh.ua.roomcrud.deletes
+package em.kh.ua.roomcrud.ui.view
 
 import android.app.Dialog
 import android.os.Bundle
@@ -7,7 +7,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import em.kh.ua.roomcrud.R
-import em.kh.ua.roomcrud.database.Note
+import em.kh.ua.roomcrud.data.model.Note
+import em.kh.ua.roomcrud.ui.viewmodel.DeleteViewModel
 
 class DeleteDialog : DialogFragment() {
 

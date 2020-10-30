@@ -1,13 +1,10 @@
-package em.kh.ua.roomcrud.database
+package em.kh.ua.roomcrud.data.model
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverters
-import em.kh.ua.roomcrud.utils.Converters
 import kotlinx.android.parcel.Parcelize
-import java.util.*
 
 @Parcelize
 @Entity(tableName = "notes")
