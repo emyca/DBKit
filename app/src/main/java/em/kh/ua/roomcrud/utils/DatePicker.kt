@@ -7,31 +7,37 @@ import android.widget.DatePicker
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import em.kh.ua.roomcrud.R
+import em.kh.ua.roomcrud.ui.view.AddActivity
 import java.util.*
 
 class DatePicker : DialogFragment(), DatePickerDialog.OnDateSetListener {
 
+    private var calendar: Calendar = Calendar.getInstance()
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         // Use current date for DatePicker default values
-        val calendar = Calendar.getInstance()
-        val year = calendar[Calendar.YEAR]
-        val month = calendar[Calendar.MONTH]
-        val day = calendar[Calendar.DAY_OF_MONTH]
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
 
         // New instance of DatePickerDialog
-       return DatePickerDialog(requireActivity(), this, year, month, day)
+        return DatePickerDialog(requireActivity(), this, year, month, day)
     }
 
     override fun onDateSet(view: DatePicker, year: Int, month: Int, day: Int) {
+        calendar.set(Calendar.YEAR, year)
+        calendar.set(Calendar.MONTH, month)
+        calendar.set(Calendar.DAY_OF_MONTH, day)
 
-        // Don't figure out yet how to use ViewBinding here.
-        // All experiments failed. TextView can't show date from DatePicker.
+        // Returns the number of milliseconds
+        // since January 1, 1970, 00:00:00 GMT represented by this Date object.
+        val date = calendar.time
+
+        // Invoke fun of the Activity
+        (activity as AddActivity?)?.setDate(date)
+
+        // Set text of date to TextView
         val tvDate = requireActivity().findViewById<TextView>(R.id.tv_date)
-        // Jan == 0
-        val monthNumber = month + 1
-        // %02d - 2 places for Int,
-        // if value has 1 place, an other 1 place will be 0
-        val format = "%d-%02d-%02d"
-        tvDate.text = String.format(Locale.getDefault(), format, year, monthNumber, day)
+        tvDate.text = FormatUtil.dateToString(date)
     }
 }

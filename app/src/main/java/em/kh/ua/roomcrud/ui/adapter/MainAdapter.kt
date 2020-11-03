@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import em.kh.ua.roomcrud.ui.adapter.MainAdapter.MainViewHolder
 import em.kh.ua.roomcrud.data.model.Note
 import em.kh.ua.roomcrud.databinding.ItemMainBinding
+import em.kh.ua.roomcrud.utils.FormatUtil
 
 
 class MainAdapter(
@@ -34,7 +35,7 @@ class MainAdapter(
     override fun onBindViewHolder(holder: MainViewHolder,position: Int){
         val note = noteList[position]
         holder.itemNote.text = note.noteName
-        holder.itemDate.text = note.noteDate
+        holder.itemDate.text = note.noteDate?.let { FormatUtil.dateToString(it) }
         holder.itemView.tag = note
         holder.itemView.setOnLongClickListener(longClickListener)
         holder.itemView.setOnClickListener(clickListener)
@@ -54,5 +55,4 @@ class MainAdapter(
         noteList = listNotes
         notifyDataSetChanged()
     }
-
 }

@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import em.kh.ua.roomcrud.R
 import em.kh.ua.roomcrud.data.model.Note
 import em.kh.ua.roomcrud.databinding.ActivityDetailBinding
+import em.kh.ua.roomcrud.utils.FormatUtil
+
 
 class DetailActivity : AppCompatActivity() {
 
@@ -33,13 +35,13 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar.toolbar)
     }
 
-    private fun initViews(){
+    private fun initViews() {
         detailName = binding.detailName
         detailContent = binding.detailContent
         detailDate = binding.detailDate
     }
 
-    private fun handleParcel(){
+    private fun handleParcel() {
         val intent = intent
         val bundle = intent.extras
         if (bundle != null) {
@@ -47,7 +49,7 @@ class DetailActivity : AppCompatActivity() {
             if (note != null) {
                 detailName?.text = note.noteName
                 detailContent?.text = note.noteContent
-                detailDate?.text = note.noteDate
+                detailDate?.text = note.noteDate?.let { FormatUtil.dateToString(it) }
                 itemId = note.noteId
             }
         }
@@ -79,5 +81,4 @@ class DetailActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }

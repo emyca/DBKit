@@ -16,6 +16,7 @@ import em.kh.ua.roomcrud.data.model.Note
 import em.kh.ua.roomcrud.databinding.ActivityAddBinding
 
 import em.kh.ua.roomcrud.utils.DatePicker
+import java.util.*
 
 
 class AddActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class AddActivity : AppCompatActivity() {
     private var strName: String? = null
     private var strContent: String? = null
     private  var strDate: String? = null
+    private  var noteDate: Date? = null
     private lateinit var addViewModel: AddViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -93,10 +95,15 @@ class AddActivity : AppCompatActivity() {
         newFragment.show(supportFragmentManager, "datePicker")
     }
 
+    // Fun to set Date value
+    fun setDate(date: Date) {
+        noteDate = date
+    }
+
     private fun provideViewModel() {
         addViewModel = ViewModelProvider(this).get(AddViewModel::class.java)
         addViewModel.insertNote(
-            Note(noteName = strName, noteContent = strContent, noteDate = strDate)
+            Note(noteName = strName, noteContent = strContent, noteDate = noteDate)
         )
     }
 }
