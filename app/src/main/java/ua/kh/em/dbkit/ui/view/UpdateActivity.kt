@@ -96,6 +96,9 @@ class UpdateActivity : AppCompatActivity() {
         updateViewModel.updateNote(Note(idNote, strName, strContent))
     }
 
+    // Opens MainActivity when back button pressed without launching its new instance.
+    // See docs:
+    // https://developer.android.com/reference/android/content/Intent#FLAG_ACTIVITY_CLEAR_TOP
     override fun onBackPressed() {
         startActivity(Intent(context, MainActivity::class.java)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
