@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.textfield.TextInputEditText
 import ua.kh.em.dbkit.R
-import ua.kh.em.dbkit.data.model.Note
 import ua.kh.em.dbkit.databinding.ActivityUpdateBinding
 import ua.kh.em.dbkit.ui.viewmodel.UpdateViewModel
 
@@ -93,7 +92,8 @@ class UpdateActivity : AppCompatActivity() {
 
     private fun provideViewModel() {
         updateViewModel = ViewModelProvider(this).get(UpdateViewModel::class.java)
-        updateViewModel.updateNote(Note(idNote, strName, strContent))
+        // updateViewModel.updateNote(Note(idNote, strName, strContent))
+        updateViewModel.updateData(strName, strContent, idNote)
     }
 
     // Opens MainActivity when back button pressed without launching its new instance.

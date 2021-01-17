@@ -17,8 +17,12 @@ interface NoteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNote(note: Note)
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun updateNote(note: Note)
+    // replaced with updateData(), because it sets date to null
+    // @Update(onConflict = OnConflictStrategy.REPLACE)
+    // suspend fun updateNote(note: Note)
+
+    @Query("UPDATE notes SET name = :name, content = :content WHERE id = :id")
+    suspend fun updateData(name: String, content: String, id: Int)
 
     @Delete
     suspend fun deleteNote(note: Note)

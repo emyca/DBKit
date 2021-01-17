@@ -17,7 +17,12 @@ class UpdateViewModel(application: Application): AndroidViewModel(application) {
         repository = NoteRepository(notesDao)
     }
 
-    fun updateNote(note: Note) = viewModelScope.launch {
-        repository.updateNote(note)
+//    replaced with updateData()
+//    fun updateNote(note: Note) = viewModelScope.launch {
+//        repository.updateNote(note)
+//    }
+
+    fun updateData(name: String, content: String, id: Int) = viewModelScope.launch {
+        repository.updateData(name, content, id)
     }
 }
