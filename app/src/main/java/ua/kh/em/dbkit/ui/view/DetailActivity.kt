@@ -15,7 +15,7 @@ import ua.kh.em.dbkit.utils.FormatUtil
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
-    private var itemId: Int? = null
+    private var itemId: Long? = null
     private var detailName: TextView? = null
     private var detailContent: TextView? = null
     private var detailDate: TextView? = null
@@ -67,7 +67,8 @@ class DetailActivity : AppCompatActivity() {
                     this@DetailActivity,
                     UpdateActivity::class.java
                 )
-                val strId = Integer.valueOf(itemId!!).toString()
+                //val strId = Integer.valueOf(itemId!!).toString()
+                val strId = itemId.toString()
                 val strName = detailName!!.text.toString()
                 val strContent = detailContent!!.text.toString()
                 val bundle = Bundle()
