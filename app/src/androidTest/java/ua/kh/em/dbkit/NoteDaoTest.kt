@@ -23,6 +23,12 @@ open class NoteDaoTest: DBTest() {
         val note = Note(noteId = 1, noteName = "January", noteContent = "cool and snow",
             noteDate = null)
         db.noteDao().insertNote(note)
+        // Warning "Inappropriate blocking method call"
+        // will disappear when removing
+        // @Throws(InterruptedException::class)
+        // in UtilTest.kt.
+        // See also:
+        // https://discuss.kotlinlang.org/t/warning-inappropriate-blocking-method-call-with-coroutines-how-to-fix/16903.
         val noteSize = db.noteDao().readAllNotes().getValueBlocking()?.size
         assertEquals(noteSize, 1)
     }
