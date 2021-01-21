@@ -7,6 +7,8 @@ import java.util.concurrent.TimeUnit
 
 // Based on:
 // https://www.raywenderlich.com/12678525-testing-android-architecture-components
+// See also:
+// https://stackoverflow.com/questions/44270688/unit-testing-room-and-livedata?rq=1
 @Throws(InterruptedException::class)
 fun <T> LiveData<T>.getValueBlocking(): T? {
     var value: T? = null
