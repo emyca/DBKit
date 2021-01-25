@@ -8,6 +8,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import ua.kh.em.dbkit.data.model.Note
+import ua.kh.em.dbkit.utils.Converters
 
 
 // Based on:
@@ -18,10 +19,19 @@ open class NoteDaoTest: DBTest() {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
+    private lateinit var converter: Converters
+
     @Test
     fun insertNoteTest() = runBlocking {
+
+        // Test date: 2021-01-25
+        val someDate = 1611535187169
+        // Converting to Date format
+        converter = Converters()
+        val noteDate = converter.fromTimestamp(someDate)
+
         val note = Note(noteId = 1, noteName = "January", noteContent = "cool and snow",
-            noteDate = null)
+            noteDate = noteDate)
         db.noteDao().insertNote(note)
         // Warning "Inappropriate blocking method call"
         // will disappear when removing
