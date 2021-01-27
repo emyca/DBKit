@@ -2,7 +2,7 @@ package ua.kh.em.dbkit
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import junit.framework.Assert.assertEquals
+import org.junit.Assert.assertEquals
 import kotlinx.coroutines.runBlocking
 import org.junit.Rule
 import org.junit.Test
@@ -43,7 +43,27 @@ open class NoteDaoTest: DBTest() {
         assertEquals(noteSize, 1)
     }
 
+    @Test
+    fun updateNoteTest() = runBlocking  {
 
+        // Test date: 2021-01-25
+        val someDate = 1611535187169
+        // Converting to Date format
+        converter = Converters()
+        val noteDate = converter.fromTimestamp(someDate)
+
+        val note = Note(noteId = 1, noteName = "April", noteContent = "Warm",
+            noteDate = noteDate)
+        db.noteDao().insertNote(note)
+
+        val name = "April"
+        val content = "Light and green"
+        val id = 1
+
+        db.noteDao().updateData(name,content, id)
+        assertEquals(db.noteDao().readAllNotes().getValueBlocking()?.get(0)?.noteContent,
+            "Light and green")
+    }
 
 }
 
