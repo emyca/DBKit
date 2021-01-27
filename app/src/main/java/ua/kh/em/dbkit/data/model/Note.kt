@@ -19,10 +19,10 @@ data class Note(
     val noteId: Long = 0,
 
     @ColumnInfo(name = "name")
-    val noteName: String? = null,
+    var noteName: String? = null,
 
     @ColumnInfo(name = "content")
-    val noteContent: String? = null,
+    var noteContent: String? = null,
 
     @ColumnInfo(name = "date")
     @TypeConverters(Converters::class)
