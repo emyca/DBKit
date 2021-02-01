@@ -65,6 +65,23 @@ open class NoteDaoTest: DBTest() {
             "Light and green")
     }
 
+    @Test
+    fun deleteNoteTest() = runBlocking {
+
+        // Test date: 2021-01-25
+        val someDate = 1611535187169
+        // Converting to Date format
+        converter = Converters()
+        val noteDate = converter.fromTimestamp(someDate)
+
+        val note = Note(noteId = 1, noteName = "July", noteContent = "It's hot",
+            noteDate = noteDate)
+        db.noteDao().insertNote(note)
+        assertEquals(db.noteDao().readAllNotes().getValueBlocking()?.size, 1)
+        db.noteDao().deleteNote(note)
+        assertEquals(db.noteDao().readAllNotes().getValueBlocking()?.size, 0)
+    }
+
 }
 
 
