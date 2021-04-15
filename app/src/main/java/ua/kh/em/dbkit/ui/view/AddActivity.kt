@@ -100,6 +100,11 @@ class AddActivity : AppCompatActivity() {
         noteDate = date
     }
 
+    // Fun to set Date Text
+    fun setDateText(strDate: String) {
+        tvDate?.text = strDate
+    }
+
     private fun provideViewModel() {
         addViewModel = ViewModelProvider(this).get(AddViewModel::class.java)
         addViewModel.insertNote(

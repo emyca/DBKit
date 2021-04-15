@@ -4,9 +4,7 @@ import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.DatePicker
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
-import ua.kh.em.dbkit.R
 import ua.kh.em.dbkit.ui.view.AddActivity
 import java.util.*
 
@@ -37,7 +35,7 @@ class DatePicker : DialogFragment(), DatePickerDialog.OnDateSetListener {
         (activity as AddActivity?)?.setDate(date)
 
         // Set text of date to TextView
-        val tvDate = requireActivity().findViewById<TextView>(R.id.tv_date)
-        tvDate.text = FormatUtil.dateToString(date)
+        val dateText = FormatUtil.dateToString(date)
+        (activity as AddActivity?)?.setDateText(dateText)
     }
 }
